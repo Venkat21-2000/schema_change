@@ -1,0 +1,13 @@
+# azure-pipelines.yml
+trigger:
+- 
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+- script: |
+    pip install schemachange
+    schemachange -f schemachange/ -c schemachange/schemachange-config.yml
+  displayName: 'Run Schema Change'
