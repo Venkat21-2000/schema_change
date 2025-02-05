@@ -1,0 +1,8 @@
+                                        
+#     -a ls59124.ap-southeast-1 \
+#     -u Natesha \
+#     -r SYSTEMTADMIN \
+#     -w COMPUTE_WH \
+#     -d DEV_DB \
+#     -c DEV_DB.STAGING.CHANGE_HISTORY \
+#     --create-change-history-table

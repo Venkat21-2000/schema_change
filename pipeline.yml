@@ -1,6 +1,7 @@
 # azure-pipelines.yml
 trigger:
-- 
+- feature/test1
+- feature/test2
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -9,5 +10,12 @@ steps:
 - checkout: self
 - script: |
     pip install schemachange
-    schemachange -f schemachange/ -c schemachange/schemachange-config.yml
+    schemachange -f ./schema_change \                              
+      -a ls59124.ap-southeast-1 \
+      -r SYSTEMTADMIN \
+      -u Natesha \
+      -w COMPUTE_WH \
+      -d DEV_DB \
+      -c DEV_DB.STAGING.CHANGE_HISTORY \
+      --create-change-history-table
   displayName: 'Run Schema Change'
